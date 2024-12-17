@@ -35,14 +35,16 @@ Follow these steps to quickly set up and use the project:
 ### 2. Create tables using ddl.sql
 
 - After the container is up and running, create the necessary tables by running the following command:
-  `psql -h localhost -U postgres -d host_agent -f sql/ddl.sql`
+  ``` bash
+  psql -h localhost -U postgres -d host_agent -f sql/ddl.sql
 
 - This command executes the ddl.sql file to create the required tables in the PostgreSQL database.
 
 ### 3. Insert hardware specs data into the database using host_info.sh
 
 - Run the following command to insert the machine's hardware specifications data:
-`./host_info.sh localhost 5432 host_agent postgres <db_password>`
+``` bash
+./host_info.sh localhost 5432 host_agent postgres <db_password>
 
 - Replace <db_password> with the database password you provided earlier.
 
