@@ -108,12 +108,15 @@ This script manages a PostgreSQL database instance using Docker. It can create, 
 **Usage:**
 
   - Create a PostgreSQL container
+
   `./scripts/psql_docker.sh create db_username db_password`
 
   - Start the PostgreSQL container
+
   `./scripts/psql_docker.sh start`
 
   - Stop the PostgreSQL container
+
   `./scripts/psql_docker.sh stop`
 
 ### 2. host_info.sh
@@ -121,9 +124,9 @@ This script collects the hardware specifications of the host machine (e.g., CPU,
 
 **Usage:**
 
-```bash
-# Insert hardware information into the database
-./scripts/host_info.sh psql_host psql_port db_name psql_user psql_password
+- Insert hardware information into the database
+
+`./scripts/host_info.sh psql_host psql_port db_name psql_user psql_password`
 
 
 ### 3. host_usage.sh
@@ -131,21 +134,22 @@ This script collects real-time system usage data (e.g., memory usage, CPU idle t
 
 **Usage:**
 
-```bash
-# Insert system usage data into the database
-./scripts/host_usage.sh psql_host psql_port db_name psql_user psql_password
+- Insert system usage data into the database
+
+`./scripts/host_usage.sh psql_host psql_port db_name psql_user psql_password`
 
 ### 4. crontab
 `crontab` is used to automate the execution of `host_usage.sh` every minute. This ensures continuous monitoring of the system's resource usage.
 
 **Setup:**
 
-```bash
-# Open crontab editor
-crontab -e
+- Open crontab editor
 
-# Add the following line to execute host_usage.sh every minute
-* * * * * bash /path/to/scripts/host_usage.sh psql_host psql_port db_name psql_user psql_password
+`crontab -e`
+
+- Add the following line to execute host_usage.sh every minute
+
+`* * * * * bash /path/to/scripts/host_usage.sh psql_host psql_port db_name psql_user psql_password`
 
 ### 5. queries.sql
 This script contains SQL queries to analyze the collected data and address specific business problems. For example, it can identify machines with high CPU idle time or low memory availability.
@@ -155,13 +159,12 @@ This script contains SQL queries to analyze the collected data and address speci
 
 **Usage:**
 
-```sql
--- Query to find machines with high CPU idle time
+`-- Query to find machines with high CPU idle time
 SELECT hostname, AVG(cpu_idle) AS avg_cpu_idle
 FROM host_usage
 INNER JOIN host_info ON host_usage.host_id = host_info.id
 GROUP BY hostname
-ORDER BY avg_cpu_idle DESC;
+ORDER BY avg_cpu_idle DESC;`
 
 ## Data Modeling
 
