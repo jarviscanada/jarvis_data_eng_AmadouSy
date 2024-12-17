@@ -164,3 +164,30 @@ INNER JOIN host_info ON host_usage.host_id = host_info.id
 GROUP BY hostname
 ORDER BY avg_cpu_idle DESC;
 
+## Data Modeling
+
+### 1. `host_info` Table Schema
+
+| Column Name  | Data Type      | Description                                    |
+|--------------|----------------|------------------------------------------------|
+| `id`         | INT            | Primary key, unique identifier for each host   |
+| `hostname`   | VARCHAR(255)    | Host machine name or identifier                |
+| `cpu_count`  | INT            | Number of CPUs on the host                     |
+| `memory`     | INT            | Total memory (in MB) of the host               |
+| `disk_space` | INT            | Total disk space (in MB) of the host           |
+| `os_version` | VARCHAR(255)    | The operating system version of the host       |
+| `created_at` | TIMESTAMP      | Timestamp when the entry was created           |
+
+### 2. `host_usage` Table Schema
+
+| Column Name  | Data Type      | Description                                     |
+|--------------|----------------|-------------------------------------------------|
+| `id`         | INT            | Primary key, unique identifier for each usage record |
+| `host_id`    | INT            | Foreign key, references `id` in `host_info` table  |
+| `timestamp`  | TIMESTAMP      | Timestamp when the usage data was collected     |
+| `cpu_idle`   | INT            | Percentage of CPU idle time                     |
+| `cpu_kernel` | INT            | Percentage of CPU used by the kernel            |
+| `memory_free`| INT            | Amount of free memory (in MB)                   |
+| `disk_io`    | INT            | Disk input/output activity                      |
+| `disk_available` | INT        | Available disk space (in MB)                    |
+
