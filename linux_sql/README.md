@@ -193,3 +193,41 @@ ORDER BY avg_cpu_idle DESC;`
 | `disk_io`    | INT            | Disk input/output activity                      |
 | `disk_available` | INT        | Available disk space (in MB)                    |
 
+## Test
+
+To test the Bash scripts and DDL (Data Definition Language) scripts, the following steps were taken:
+
+1. **Testing `psql_docker.sh`:**
+   - **Objective:** Verify that the script correctly creates, starts, and stops the PostgreSQL container.
+   - **Testing Method:** 
+     - Ran `psql_docker.sh create` with a valid database username and password.
+     - Used `psql_docker.sh start` to start the container and `psql_docker.sh stop` to stop it.
+   - **Result:** The script successfully created the container, started it, and stopped it without any issues.
+
+2. **Testing `host_info.sh`:**
+   - **Objective:** Ensure that the script collects the host hardware specifications and inserts them into the database.
+   - **Testing Method:** 
+     - Ran the script with correct database parameters to insert hardware info into the `host_info` table.
+   - **Result:** Data was successfully inserted into the database, including CPU count, memory, disk space, etc.
+
+3. **Testing `host_usage.sh`:**
+   - **Objective:** Ensure that the script collects real-time system usage data and inserts it into the database.
+   - **Testing Method:** 
+     - Ran the script with correct database parameters to insert real-time system usage data into the `host_usage` table.
+   - **Result:** Data was successfully inserted and included metrics like CPU idle time, memory usage, disk I/O, etc.
+
+4. **Testing `crontab` Setup:**
+   - **Objective:** Verify that the `host_usage.sh` script runs periodically as per the crontab configuration.
+   - **Testing Method:** 
+     - Set up crontab to run `host_usage.sh` every minute.
+     - Checked the `host_usage` table to see if new records were inserted every minute.
+   - **Result:** Data was successfully recorded every minute as expected.
+
+5. **Testing DDL:**
+   - **Objective:** Validate the correct creation of database tables and relationships.
+   - **Testing Method:** 
+     - Ran the DDL script to create the `host_info` and `host_usage` tables.
+   - **Result:** Tables were successfully created without errors, and relationships between tables were correctly established.
+
+These tests ensured the functionality of the scripts and DDL in managing the database and automating data collection.
+
