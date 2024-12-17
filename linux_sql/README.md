@@ -20,7 +20,7 @@ This project is useful for:
 
 This project makes it easy to manage PostgreSQL in a containerized environment with minimal setup and configuration.
 
-# Quick Start
+## Quick Start
 
 Follow these steps to quickly set up and use the project:
 
@@ -62,6 +62,6 @@ Follow these steps to quickly set up and use the project:
 
 - Add the following line to your crontab file to schedule it:
 
-* * * * * /path/to/host_usage.sh localhost 5432 host_agent postgres <db_password>
+`* * * * * /path/to/host_usage.sh localhost 5432 host_agent postgres <db_password>`
 
 - Replace /path/to/host_usage.sh with the correct path to your host_usage.sh script and <db_password> with your database password.
