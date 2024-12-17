@@ -255,3 +255,14 @@ To deploy the application, the following steps were followed:
    
 By combining GitHub, Docker, and crontab, the application was effectively deployed and automated for continuous monitoring of system performance and hardware specifications.
 
+# Improvements
+
+1. **Handle hardware updates:**
+   - Currently, the system assumes hardware specifications remain unchanged. An improvement would be to regularly update and verify hardware details, ensuring that the database reflects any hardware changes or upgrades automatically.
+
+2. **Optimize resource usage collection:**
+   - The current `host_usage.sh` script collects system usage data every minute. Optimizing this by adjusting the frequency or improving the efficiency of data collection could reduce resource consumption on the monitored system.
+
+3. **Error handling and notifications:**
+   - Enhance the scripts with better error handling and logging to capture failures in script execution. Additionally, setting up notifications (e.g., email alerts or Slack messages) would be beneficial if a container fails to start or if there is a problem inserting data into the database.
+
