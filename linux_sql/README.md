@@ -65,3 +65,36 @@ Follow these steps to quickly set up and use the project:
 `* * * * * /path/to/host_usage.sh localhost 5432 host_agent postgres <db_password>`
 
 - Replace /path/to/host_usage.sh with the correct path to your host_usage.sh script and <db_password> with your database password.
+
+## Implementation
+
+This project is implemented using a combination of Bash scripts, Docker, PostgreSQL, and Linux utilities. Here's an overview of the key components and how they were implemented:
+
+### 1. **Database Setup**
+- A PostgreSQL database is deployed using Docker for efficient and isolated data storage. 
+- The database schema is created using `ddl.sql`, which defines tables for hardware specifications (`host_info`) and real-time usage data (`host_usage`).
+
+### 2. **Hardware Specification Collection**
+- The `host_info.sh` script collects hardware information such as CPU, memory, and disk specifications using Linux commands like `vmstat`, `lscpu`, and `df`. 
+- This data is inserted into the `host_info` table in the PostgreSQL database.
+
+### 3. **Real-Time Usage Data Collection**
+- The `host_usage.sh` script collects real-time metrics like CPU idle time, memory usage, and disk I/O using Linux commands like `vmstat` and `df`.
+- This script inserts the collected metrics into the `host_usage` table in the database.
+
+### 4. **Automating Data Collection**
+- A cron job is set up to run the `host_usage.sh` script every minute. This ensures continuous data collection without manual intervention.
+
+### 5. **Integration with Docker**
+- Docker ensures that PostgreSQL is isolated and runs in a controlled environment.
+- The `psql_docker.sh` script manages the creation, starting, and stopping of the PostgreSQL Docker container, providing flexibility and simplicity in deployment.
+
+### 6. **Version Control**
+- Git is used to manage the project files and maintain a history of changes. Branches were used for different features, and merging ensured a clean and tested main branch.
+
+### 7. **Error Handling and Logging**
+- The Bash scripts include error handling to validate inputs, check database connectivity, and ensure reliable operation.
+- Logs are generated to debug and track the scripts' execution.
+
+By combining these components, the project collects, stores, and manages system hardware and usage data efficiently in a structured manner.
+
