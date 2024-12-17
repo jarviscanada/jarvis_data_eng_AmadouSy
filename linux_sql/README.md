@@ -117,6 +117,8 @@ This script manages a PostgreSQL database instance using Docker. It can create, 
   # Stop the PostgreSQL container
   ./scripts/psql_docker.sh stop
 
+
+
 ### 2. host_info.sh
 This script collects the hardware specifications of the host machine (e.g., CPU, memory, etc.) and inserts the data into the `host_info` table in the database.
 
