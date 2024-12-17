@@ -43,8 +43,8 @@ Follow these steps to quickly set up and use the project:
 ### 3. Insert hardware specs data into the database using host_info.sh
 
 - Run the following command to insert the machine's hardware specifications data:
-``` bash
-./host_info.sh localhost 5432 host_agent postgres <db_password>
+  ``` bash
+  ./host_info.sh localhost 5432 host_agent postgres <db_password>
 
 - Replace <db_password> with the database password you provided earlier.
 
