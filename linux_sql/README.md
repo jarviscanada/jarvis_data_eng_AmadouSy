@@ -231,7 +231,7 @@ To test the Bash scripts and DDL (Data Definition Language) scripts, the followi
 
 These tests ensured the functionality of the scripts and DDL in managing the database and automating data collection.
 
-# Deployment
+## Deployment
 
 To deploy the application, the following steps were followed:
 
