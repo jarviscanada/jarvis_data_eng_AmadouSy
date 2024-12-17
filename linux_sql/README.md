@@ -231,3 +231,27 @@ To test the Bash scripts and DDL (Data Definition Language) scripts, the followi
 
 These tests ensured the functionality of the scripts and DDL in managing the database and automating data collection.
 
+# Deployment
+
+To deploy the application, the following steps were followed:
+
+1. **GitHub:**
+   - The project and scripts were stored in a GitHub repository.
+   - GitHub was used for version control, making it easy to collaborate, track changes, and roll back if necessary.
+
+2. **Docker:**
+   - Docker was used to containerize the PostgreSQL database (`psql_docker.sh`), ensuring that the database could be easily deployed across different environments.
+   - A Docker container was created and configured with the necessary environment variables for PostgreSQL (e.g., password, port).
+
+3. **Crontab:**
+   - `crontab` was used to automate the execution of the `host_usage.sh` script. This ensures that the system's resource usage is monitored continuously without manual intervention.
+   - The script was set to run every minute, inserting system usage data into the database.
+
+4. **Manual Testing:**
+   - After deployment, scripts were tested manually to ensure that they worked as expected and collected the necessary data into the database.
+   
+5. **Environment Variables:**
+   - Necessary environment variables (e.g., database credentials) were configured to allow the scripts to connect to the database.
+   
+By combining GitHub, Docker, and crontab, the application was effectively deployed and automated for continuous monitoring of system performance and hardware specifications.
+
