@@ -100,6 +100,16 @@ This project is implemented using a combination of Bash scripts, Docker, Postgre
 
 By combining these components, the project collects, stores, and manages system hardware and usage data efficiently in a structured manner.
 
+## Architecture
+
+The project architecture consists of three Linux hosts, each running monitoring agents that collect system usage data. The agents store the collected data into a centralized PostgreSQL database.
+
+- **Linux Hosts:** Machines where the monitoring agents (`host_info.sh` and `host_usage.sh`) are executed to collect hardware and usage data.
+- **Monitoring Agents:** Shell scripts that gather and send system metrics to the database.
+- **PostgreSQL Database:** Centralized storage for all collected hardware specifications and usage data.
+
+The diagram is saved in the `assets` directory as `cluster_architecture.png`.
+
 ## Scripts
 
 ### 1. psql_docker.sh
