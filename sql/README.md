@@ -1,4 +1,3 @@
-<< EOF
 # Introduction
 
 # SQL Queries
@@ -7,15 +6,9 @@
 
 ###### Question 1: Show all members 
 
-```sql
-SELECT *
-FROM cd.members
-```
+
 
 ###### Questions 2: Lorem ipsum...
 
-```sql
-SELECT blah blah 
-```
 
-EOF
+
