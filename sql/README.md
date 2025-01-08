@@ -4,7 +4,7 @@
 
 ## Table Setup (DDL)
 
-### Créer le schéma `cd`
+### Create schema `cd`
 
 ```sql
 CREATE SCHEMA cd;
