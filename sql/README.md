@@ -2,11 +2,13 @@
 
 # SQL Queries
 
-###### Table Setup (DDL)
--- Créer le schéma cd
+## Table Setup (DDL)
+
+### Créer le schéma `cd`
+
+```sql
 CREATE SCHEMA cd;
 
--- Créer la table cd.members
 CREATE TABLE cd.members (
     memid SERIAL PRIMARY KEY,
     surname VARCHAR(200) NOT NULL,
@@ -18,7 +20,6 @@ CREATE TABLE cd.members (
     joindate TIMESTAMP
 );
 
--- Créer la table cd.bookings
 CREATE TABLE cd.bookings (
     bookid SERIAL PRIMARY KEY,
     facid INTEGER NOT NULL,
@@ -29,7 +30,6 @@ CREATE TABLE cd.bookings (
     FOREIGN KEY (memid) REFERENCES cd.members(memid)
 );
 
--- Créer la table cd.facilities
 CREATE TABLE cd.facilities (
     facid SERIAL PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
@@ -38,7 +38,6 @@ CREATE TABLE cd.facilities (
     initialoutlay NUMERIC NOT NULL,
     monthlymaintenance NUMERIC NOT NULL
 );
-
 
 ###### Question 1: Show all members 
 
