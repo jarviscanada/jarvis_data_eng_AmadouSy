@@ -39,6 +39,8 @@ CREATE TABLE cd.facilities (
     monthlymaintenance NUMERIC NOT NULL
 );
 
+```
+
 ###### Question 1: Show all members 
 
 
