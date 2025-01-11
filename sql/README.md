@@ -1,16 +1,17 @@
 # Introduction
-(about 100-150 words)
-Discuss the design of the project. What does this project/product do? Who are the users? What are the technologies you have used? (e.g. bash, docker, git, etc..)
+This project focuses on building expertise in SQL and relational database design by solving practical queries and understanding database structures. It allows users to learn and practice CRUD operations, data modeling, normalization, and advanced SQL techniques such as JOINs, aggregations, and window functions. The project is designed as a hands-on learning experience, combining theoretical understanding with practical implementation.
+
+The primary users of this project are aspiring data professionals, including data engineers, analysts, and developers, who aim to strengthen their database management and querying skills.
+
+The project utilizes a variety of technologies to enhance the learning experience, including PostgreSQL for database management, Docker for containerized database instances, Git for version control, and Bash for automating tasks. Tools like pgAdmin and DBeaver are recommended for database interaction, while SQL formatters are used to maintain clean and readable query structures.
 
 # SQL Queries
 
 ###### Table Setup (DDL)
 
-Blah blah
+
 
 ###### Question 1: Show all members 
-
-## Table Setup (DDL)
 
 ### Create schema `cd`
 
@@ -49,7 +50,6 @@ CREATE TABLE cd.facilities (
 
 ```
 
-###### Question 1: Show all members 
 
 
 
