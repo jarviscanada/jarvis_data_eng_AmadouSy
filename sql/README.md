@@ -9,15 +9,6 @@ The project utilizes a variety of technologies to enhance the learning experienc
 
 ###### Table Setup (DDL)
 
-```sql
-insert into cd.facilities
-    (facid, name, membercost, guestcost, initialoutlay, monthlymaintenance)
-    values (9, 'Spa', 20, 30, 100000, 800);
-```
-Explanation: This query adds a new facility with facid = 9 named "Spa" to the cd.facilities table, with associated costs and maintenance fees.
-
-###### Question 1: Show all members 
-
 ### Create schema `cd`
 
 ```sql
@@ -55,10 +46,75 @@ CREATE TABLE cd.facilities (
 
 ```
 
+```sql
+insert into cd.facilities
+    (facid, name, membercost, guestcost, initialoutlay, monthlymaintenance)
+    values (9, 'Spa', 20, 30, 100000, 800);
+```
+This query adds a new facility with facid = 9 named "Spa" to the cd.facilities table, with associated costs and maintenance fees.
+
+```sql
+insert into cd.facilities
+    (facid, name, membercost, guestcost, initialoutlay, monthlymaintenance)
+    select (select max(facid) from cd.facilities)+1, 'Spa', 20, 30, 100000, 800;
+```
+This query updates the initialoutlay value to 10000 for the facility with facid = 1.
 
 
+###### Question 1: Insert a new facility (Spa)
 
-###### Questions 2: Lorem ipsum...
+```sql
+insert into cd.facilities
+    (facid, name, membercost, guestcost, initialoutlay, monthlymaintenance)
+    values (9, 'Spa', 20, 30, 100000, 800);
+```
+This query adds a new facility with facid = 9 named "Spa" to the cd.facilities table, with associated costs and maintenance fees.
+
+
+###### Questions 2: Dynamically insert a new facility
+
+```sql
+insert into cd.facilities
+    (facid, name, membercost, guestcost, initialoutlay, monthlymaintenance)
+    select (select max(facid) from cd.facilities)+1, 'Spa', 20, 30, 100000, 800;
+```
+This query updates the initialoutlay value to 10000 for the facility with facid = 1.
+
+
+###### Questions 3: Update the initial outlay of a facility
+
+```sql
+update cd.facilities
+    set initialoutlay = 10000
+    where facid = 1;
+```
+This query updates the initialoutlay value to 10000 for the facility with facid = 1.
+
+###### Questions 4: Update costs dynamically
+
+```sql
+update cd.facilities
+set 
+    membercost = (select membercost * 1.1 from cd.facilities where facid = 0),
+    guestcost = (select guestcost * 1.1 from cd.facilities where facid = 0)
+where facid = 1;
+```
+This query increases the membercost and guestcost of the facility with facid = 1 by 10%, using values derived from the facility with facid = 0.
+
+###### Questions 5: Delete all bookings
+
+```sql
+delete from cd.bookings;
+```
+This query deletes all records from the cd.bookings table, effectively clearing all booking data.
+
+###### Questions 6: Delete a specific member
+
+```sql
+delete from cd.members
+    where memid = 37;
+```
+This query deletes the member with memid = 37 from the cd.members table
 
 
 
