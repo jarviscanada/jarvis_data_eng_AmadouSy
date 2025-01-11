@@ -46,21 +46,6 @@ CREATE TABLE cd.facilities (
 
 ```
 
-```sql
-insert into cd.facilities
-    (facid, name, membercost, guestcost, initialoutlay, monthlymaintenance)
-    values (9, 'Spa', 20, 30, 100000, 800);
-```
-This query adds a new facility with facid = 9 named "Spa" to the cd.facilities table, with associated costs and maintenance fees.
-
-```sql
-insert into cd.facilities
-    (facid, name, membercost, guestcost, initialoutlay, monthlymaintenance)
-    select (select max(facid) from cd.facilities)+1, 'Spa', 20, 30, 100000, 800;
-```
-This query updates the initialoutlay value to 10000 for the facility with facid = 1.
-
-
 ###### Question 1: Insert a new facility (Spa)
 
 ```sql
