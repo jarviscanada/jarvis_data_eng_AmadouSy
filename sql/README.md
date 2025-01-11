@@ -9,7 +9,12 @@ The project utilizes a variety of technologies to enhance the learning experienc
 
 ###### Table Setup (DDL)
 
-
+```sql
+insert into cd.facilities
+    (facid, name, membercost, guestcost, initialoutlay, monthlymaintenance)
+    values (9, 'Spa', 20, 30, 100000, 800);
+```
+Explanation: This query adds a new facility with facid = 9 named "Spa" to the cd.facilities table, with associated costs and maintenance fees.
 
 ###### Question 1: Show all members 
 
