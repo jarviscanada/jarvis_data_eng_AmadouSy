@@ -2,9 +2,21 @@ package ca.jrvs.apps.grep;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.util.Collections;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
-public interface JavaGrepImpl implements JavaGrep {
+public class JavaGrepImpl implements JavaGrep {
+
+    // Déclaration des variables d'instance
+    private String rootPath;
+    private String regex;
+    private String outFile;
 
     @Override
     public void process() throws IOException {
@@ -136,6 +148,4 @@ public interface JavaGrepImpl implements JavaGrep {
         // Set the provided output file path to the instance variable
         this.outFile = outFile;
     }
-
-
 }

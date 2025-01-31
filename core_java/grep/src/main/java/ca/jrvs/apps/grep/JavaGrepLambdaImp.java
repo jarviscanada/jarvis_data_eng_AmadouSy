@@ -1,10 +1,12 @@
+import ca.jrvs.apps.grep.JavaGrepImpl;
 import java.io.*;
 import java.nio.file.*;
 import java.util.*;
 import java.util.regex.*;
 import java.util.stream.*;
 
-public class JavaGrepLambdaImp implements JavaGrep {
+
+public class JavaGrepLambdaImp extends JavaGrepImpl {
 
     private String rootPath;
     private String regex;
