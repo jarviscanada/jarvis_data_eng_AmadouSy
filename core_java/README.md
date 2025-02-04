@@ -41,4 +41,33 @@ To use the **Java Grep** application, follow these steps:
   docker run --rm -v $(pwd)/data:/data -v $(pwd)/log:/log <your-docker-id>/grep "<regex>" /data/txt /log/grep.out
   ```
 
+## Implementation
+
+### Pseudocode
+
+```java
+method process():
+    # Step 1: List all files in the root directory
+    files = listFiles(rootPath)
+
+    # Step 2: Loop through each file
+    for each file in files:
+        # Step 3: Read all lines from the current file
+        lines = readLines(file)
+
+        # Step 4: Loop through each line and check if it matches the pattern
+        for each line in lines:
+            if containsPattern(line):
+                # Step 5: Write the matched lines to the output file
+                writeToFile(line)
+```
+
+This pseudocode outlines the core logic of the `process` method:
+
+1. It lists all the files in the given directory (`listFiles`).
+2. Reads each file's content (`readLines`).
+3. Checks each line against a given regular expression pattern (`containsPattern`).
+4. Writes matching lines to the output file (`writeToFile`).
+
+
 2. [Stock Quote App](./stockquote)
