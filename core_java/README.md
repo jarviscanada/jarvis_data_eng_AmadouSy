@@ -69,5 +69,32 @@ This pseudocode outlines the core logic of the `process` method:
 3. Checks each line against a given regular expression pattern (`containsPattern`).
 4. Writes matching lines to the output file (`writeToFile`).
 
+### Performance Issue
+
+The `process` method processes large files, which can cause high memory usage, especially when reading and storing the contents of entire files in memory. To mitigate this, the program could process the files line by line, rather than loading the entire file into memory. Additionally, using streams and lazy evaluation could help reduce memory consumption.
+
+# Test
+
+To test the application manually, I prepared sample text files containing various sentences, including some with matching patterns (e.g., "Romeo" and "Juliet"). I ran the application using different regular expressions to verify that only lines containing the specified patterns were written to the output file. I also compared the output file with the expected results to ensure accuracy. Additionally, I tested with both small and large files to assess the application's performance and memory usage.
+
+# Deployment
+
+To dockerize the application, I created a `Dockerfile` that includes the necessary setup for the app to run inside a Docker container. The Dockerfile starts with an official `openjdk:8-alpine` base image, which is lightweight and ideal for running Java applications. The JAR file is copied into the container, and the `ENTRYPOINT` is set to run the application with the provided arguments. The Docker image can then be built and pushed to Docker Hub for easy distribution.
+
+The steps to build and run the Docker container are as follows:
+
+1. Build the Docker image:
+   ```bash
+   docker build -t myusername/grep .
+   ```
+
+2. Run the container
+To run the Docker container with your application, use the following command:
+   ```bash
+   docker run --rm -v $(pwd)/data:/data -v $(pwd)/log:/log myusername/grep .*Romeo.*Juliet.* /data/txt /log/grep.out
+   ```
+
+
+
 
 2. [Stock Quote App](./stockquote)
