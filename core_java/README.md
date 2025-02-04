@@ -36,7 +36,7 @@ To use the **Java Grep** application, follow these steps:
   ```bash
   docker build -t <your-docker-id>/grep .
   ```
-  -Then, run the application using Docker:
+  - Then, run the application using Docker:
   ```bash
   docker run --rm -v $(pwd)/data:/data -v $(pwd)/log:/log <your-docker-id>/grep "<regex>" /data/txt /log/grep.out
   ```
