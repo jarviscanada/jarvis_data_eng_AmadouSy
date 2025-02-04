@@ -106,9 +106,6 @@ Here are three simple improvements for the project:
 3. **Improve Logging**  
    Adding more detailed logging for different steps of the process (e.g., file reading, matching, writing) could help with debugging and monitoring the app's behavior.
 
-   ```
-
-
 
 
 2. [Stock Quote App](./stockquote)
