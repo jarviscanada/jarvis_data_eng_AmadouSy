@@ -64,7 +64,7 @@ public class LambdaStreamImp implements LambdaStreamExc {
     @Override
     public void printMessages(String[] messages, Consumer<String> printer) {
         for (String message : messages) {
-            printer.accept(message); // Print each message using the provided printer
+            printer.accept(message); //Print each message using the provided printer
         }
     }
 

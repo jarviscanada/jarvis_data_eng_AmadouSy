@@ -90,4 +90,23 @@ public class JavaGrepLambdaImp extends JavaGrepImpl {
     public void setOutFile(String outFile) {
         this.outFile = outFile;
     }
+
+    public static void main(String[] args) {
+        if (args.length != 3) {
+            System.out.println("Usage: JavaGrepImpl <regex> <rootPath> <outFile>");
+            System.exit(1);
+        }
+
+        JavaGrepLambdaImp javaGrepLambdaImp = new JavaGrepLambdaImp();
+        javaGrepLambdaImp.setRegex(args[0]);
+        javaGrepLambdaImp.setRootPath(args[1]);
+        javaGrepLambdaImp.setOutFile(args[2]);
+
+        try {
+            javaGrepLambdaImp.process();
+            System.out.println("Grep operation completed successfully.");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
 }

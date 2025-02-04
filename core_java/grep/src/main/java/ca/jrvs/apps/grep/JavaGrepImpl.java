@@ -18,7 +18,7 @@ public class JavaGrepImpl implements JavaGrep {
     private String regex;
     private String outFile;
 
-    @Override
+        @Override
     public void process() throws IOException {
         // Step 1: List the files in the root directory
         List<File> files = listFiles(getRootPath());
@@ -39,26 +39,19 @@ public class JavaGrepImpl implements JavaGrep {
 
     @Override
     public List<File> listFiles(String rootDir) {
-        // Create a File object representing the starting directory
         File rootDirectory = new File(rootDir);
-
-        // Check if the directory exists and if it's a valid directory
         if (rootDirectory.exists() && rootDirectory.isDirectory()) {
-            // Retrieve all files in the directory
-            File[] files = rootDirectory.listFiles();
-
-            // If no files are found, return an empty list
+            // Pour lister tous les fichiers, y compris dans les sous-répertoires
+            File[] files = rootDirectory.listFiles(file -> file.isDirectory() || file.getName().endsWith(".txt"));
             if (files == null) {
                 return Collections.emptyList();
             }
-
-            // Convert the array of files to a list and return it
             return Arrays.asList(files);
         } else {
-            // If the directory is invalid or does not exist, throw an exception
             throw new IllegalArgumentException("The provided directory path is invalid or not a directory.");
         }
     }
+
 
     @Override
     public List<String> readLines(File inputFile) throws IllegalArgumentException, IOException {
@@ -147,5 +140,32 @@ public class JavaGrepImpl implements JavaGrep {
         }
         // Set the provided output file path to the instance variable
         this.outFile = outFile;
+    }
+
+    // Main method
+    public static void main(String[] args) {
+        // Check if exactly 3 arguments are passed
+        if (args.length != 3) {
+            System.out.println("Usage: JavaGrepImpl <regex> <rootPath> <outFile>");
+            System.exit(1);
+        }
+
+        // Create an instance of JavaGrepImpl
+        JavaGrepImpl javaGrep = new JavaGrepImpl();
+
+        // Assign the arguments to instance variables
+        javaGrep.setRegex(args[0]);  // Set the regular expression
+        javaGrep.setRootPath(args[1]);  // Set the root directory path
+        javaGrep.setOutFile(args[2]);  // Set the output file path
+
+        // Try to execute the grep process
+        try {
+            javaGrep.process();  // Execute the grep operation
+            System.out.println("Grep operation completed successfully.");
+        } catch (IOException e) {
+            // If an error occurs, print the exception
+            e.printStackTrace();
+            System.out.println("Error during grep operation.");
+        }
     }
 }
