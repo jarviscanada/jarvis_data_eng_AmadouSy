@@ -15,36 +15,12 @@
             <version>2.16.1</version>
         </dependency>
 
-        <!-- Adding OkHttp -->
+        <!-- Ajout de OkHttp -->
         <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp</artifactId>
             <version>5.0.0-alpha.11</version>
         </dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>5.7.1</version>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- Mockito for unit testing -->
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>3.11.2</version>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- Mockito JUnit 5 integration -->
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-junit-jupiter</artifactId>
-            <version>3.11.2</version>
-            <scope>test</scope>
-        </dependency>
-
     </dependencies>
 
     <build>
