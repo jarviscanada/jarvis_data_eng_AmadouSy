@@ -7,9 +7,10 @@ import okhttp3.Response;
 import okhttp3.ResponseBody;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+import ca.jrvs.apps.stockquote.model.Quote;
 
 import java.io.IOException;
 
@@ -38,7 +39,7 @@ class QuoteHttpHelperTest {
     @BeforeEach
     void setUp() throws IOException {
         MockitoAnnotations.openMocks(this);
-        quoteHttpHelper = new QuoteHttpHelper("mock-api-key", mockClient);
+        quoteHttpHelper = new QuoteHttpHelper("mock-api-key");
 
         // Mock HTTP call behavior
         when(mockClient.newCall(any(Request.class))).thenReturn(mockCall);
@@ -55,20 +56,18 @@ class QuoteHttpHelperTest {
 
         // Validate results
         assertNotNull(quote, "Quote should not be null");
-        assertEquals("AAPL", quote.getSymbol(), "Symbol should match");
+        assertEquals("AAPL", quote.getTicker(), "Symbol should match");
         assertEquals(150.50, quote.getPrice(), "Price should match mock response");
     }
 
     @Test
     void testFetchQuoteInfo_InvalidSymbol() {
-        // Ensure exception is thrown for an invalid symbol
         assertThrows(IllegalArgumentException.class, () -> quoteHttpHelper.fetchQuoteInfo(""),
                 "Empty symbol should throw IllegalArgumentException");
     }
 
     @Test
     void testShutdown() {
-        // Ensure shutdown does not throw exceptions
         assertDoesNotThrow(() -> quoteHttpHelper.shutdown(), "Shutdown should not throw exceptions");
     }
 }

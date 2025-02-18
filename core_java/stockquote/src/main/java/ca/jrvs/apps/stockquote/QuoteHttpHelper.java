@@ -1,5 +1,6 @@
 package ca.jrvs.apps.stockquote;
 
+import ca.jrvs.apps.stockquote.model.Quote;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -34,19 +35,16 @@ public class QuoteHttpHelper {
      * @throws IllegalArgumentException - if no data was found for the given symbol
      */
     public Quote fetchQuoteInfo(String symbol) throws IllegalArgumentException {
-        // Validate ticker symbol format
         if (symbol == null || symbol.trim().isEmpty() || !symbol.matches("^[A-Z]{1,5}$")) {
             throw new IllegalArgumentException("Invalid ticker symbol: " + symbol);
         }
 
-        // Build request URL
         HttpUrl url = HttpUrl.parse(BASE_URL).newBuilder()
                 .addQueryParameter("function", FUNCTION)
                 .addQueryParameter("symbol", symbol)
                 .addQueryParameter("apikey", apiKey)
                 .build();
 
-        // Create an HTTP GET request
         Request request = new Request.Builder().url(url).build();
 
         try (Response response = client.newCall(request).execute()) {
@@ -54,13 +52,11 @@ public class QuoteHttpHelper {
                 throw new IOException("Unexpected HTTP response: " + response);
             }
 
-            // Read response body
             String responseBody = response.body().string();
             if (responseBody.isEmpty()) {
                 throw new IllegalArgumentException("No data found for symbol: " + symbol);
             }
 
-            // Parse JSON response
             JsonNode rootNode = objectMapper.readTree(responseBody);
             JsonNode quoteNode = rootNode.get("Global Quote");
 
@@ -68,7 +64,6 @@ public class QuoteHttpHelper {
                 throw new IllegalArgumentException("No quote data found for symbol: " + symbol);
             }
 
-            // Deserialize JSON to Quote object
             return objectMapper.treeToValue(quoteNode, Quote.class);
 
         } catch (IOException e) {
@@ -77,10 +72,20 @@ public class QuoteHttpHelper {
     }
 
     /**
+     * Shutdown method to clean up resources
+     */
+    public void shutdown() {
+        if (client != null) {
+            client.dispatcher().executorService().shutdown();
+            client.connectionPool().evictAll();
+        }
+    }
+
+    /**
      * Main method for testing
      */
     public static void main(String[] args) {
-        String apiKey = "07f59cff42mshbd937a6d205b307p1367f3jsnc1dac0844937";  // Replace with your Alpha Vantage API key
+        String apiKey = "07f59cff42mshbd937a6d205b307p1367f3jsnc1dac0844937"; // Replace with your API key
         QuoteHttpHelper helper = new QuoteHttpHelper(apiKey);
 
         try {
@@ -88,6 +93,8 @@ public class QuoteHttpHelper {
             System.out.println("Stock Quote: " + quote);
         } catch (Exception e) {
             System.err.println("Error: " + e.getMessage());
+        } finally {
+            helper.shutdown();
         }
     }
 }
