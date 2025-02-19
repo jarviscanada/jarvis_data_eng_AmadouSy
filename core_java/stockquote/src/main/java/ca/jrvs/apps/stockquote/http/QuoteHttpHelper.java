@@ -1,4 +1,4 @@
-package ca.jrvs.apps.stockquote;
+package ca.jrvs.apps.stockquote.http;
 
 import ca.jrvs.apps.stockquote.model.Quote;
 import okhttp3.HttpUrl;

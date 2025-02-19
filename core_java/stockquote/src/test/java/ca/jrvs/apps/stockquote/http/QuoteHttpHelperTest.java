@@ -1,4 +1,4 @@
-package ca.jrvs.apps.stockquote;
+package ca.jrvs.apps.stockquote.http;
 
 import okhttp3.Call;
 import okhttp3.OkHttpClient;
@@ -14,7 +14,6 @@ import ca.jrvs.apps.stockquote.model.Quote;
 
 import java.io.IOException;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 class QuoteHttpHelperTest {

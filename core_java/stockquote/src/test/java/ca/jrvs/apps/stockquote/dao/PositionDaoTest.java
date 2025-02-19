@@ -19,10 +19,10 @@ public class PositionDaoTest {
 
     @BeforeAll
     void setup() throws SQLException {
-        // Connect to PostgreSQL
+        // Connexion à PostgreSQL
         String url = "jdbc:postgresql://localhost:5432/stock_quote";
-        String user = "your_username"; // Replace with your PostgreSQL username
-        String password = "your_password"; // Replace with your PostgreSQL password
+        String user = "your_username"; // Remplace par ton utilisateur PostgreSQL
+        String password = "your_password"; // Remplace par ton mot de passe PostgreSQL
 
         connection = DriverManager.getConnection(url, user, password);
         positionDao = new PositionDao(connection);
@@ -32,24 +32,21 @@ public class PositionDaoTest {
     @Order(1)
     void saveTest() {
         Position position = new Position();
-        position.setAccountId(1);
         position.setTicker("AAPL");
-        position.setQuantity(50);
+        position.setNumOfShares(50); // Correction ici
+        position.setValuePaid(7500.0);
 
         Position savedPosition = positionDao.save(position);
-
         assertNotNull(savedPosition);
         assertEquals("AAPL", savedPosition.getTicker());
-        assertEquals(50, savedPosition.getQuantity());
     }
 
     @Test
     @Order(2)
     void findByIdTest() {
         Optional<Position> foundPosition = positionDao.findById("AAPL");
-
         assertTrue(foundPosition.isPresent());
-        assertEquals(50, foundPosition.get().getQuantity());
+        assertEquals(50, foundPosition.get().getNumOfShares()); // Correction ici
     }
 
     @Test
@@ -64,7 +61,6 @@ public class PositionDaoTest {
     void deleteByIdTest() {
         positionDao.deleteById("AAPL");
         Optional<Position> foundPosition = positionDao.findById("AAPL");
-
         assertFalse(foundPosition.isPresent());
     }
 
