@@ -7,6 +7,10 @@ public class PositionService {
 
     private PositionDao dao;
 
+    public PositionService(PositionDao dao) {
+        this.dao = dao;
+    }
+
     /**
      * Processes a buy order and updates the database accordingly.
      * @param ticker Stock ticker symbol
