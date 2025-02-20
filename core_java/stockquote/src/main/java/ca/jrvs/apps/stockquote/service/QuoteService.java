@@ -23,29 +23,27 @@ public class QuoteService {
 
     /**
      * Fetches the latest quote data from an external API and saves it to the database.
-     * @param ticker Stock ticker symbol (e.g., "AAPL").
+     * @param symbol Stock ticker symbol (e.g., "AAPL").
      * @return An Optional containing the Quote if successfully fetched, otherwise empty.
      * @throws IllegalArgumentException If the ticker is invalid.
      */
-    public Optional<Quote> fetchQuoteDataFromAPI(String ticker) {
-        // Validate the ticker format
-        if (ticker == null || ticker.trim().isEmpty() || !ticker.matches("^[A-Z]{1,5}$")) {
-            throw new IllegalArgumentException("Invalid ticker symbol: " + ticker);
-        }
-
-        // Fetch quote data from the external API
-        Quote quote;
+    public Optional<Quote> fetchQuoteDataFromAPI(String symbol) {
         try {
-            quote = quoteHttpHelper.fetchQuoteInfo(ticker);
+            // Fetch quote from API
+            Quote quote = quoteHttpHelper.fetchQuoteInfo(symbol);
+            if (quote == null) {
+                System.out.println("Failed to fetch quote data for symbol: " + symbol);
+                return Optional.empty();
+            }
+
+            // Save to database
+            quoteDao.save(quote);
+            return Optional.of(quote);
         } catch (Exception e) {
-            System.err.println("Error fetching quote: " + e.getMessage());
+            System.out.println("Exception while fetching quote: " + e.getMessage());
+            e.printStackTrace();
             return Optional.empty();
         }
-
-        // Save or update the quote in the database
-        quoteDao.save(quote);
-
-        return Optional.of(quote);
     }
 
     /**
@@ -58,7 +56,6 @@ public class QuoteService {
         if (ticker == null || ticker.trim().isEmpty()) {
             throw new IllegalArgumentException("Ticker cannot be null or empty.");
         }
-
         return quoteDao.findById(ticker);
     }
 }

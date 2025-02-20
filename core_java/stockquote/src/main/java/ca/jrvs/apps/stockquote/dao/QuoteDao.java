@@ -20,9 +20,15 @@ public class QuoteDao implements CrudDao<Quote, String> {
 
     @Override
     public Quote save(Quote quote) throws IllegalArgumentException {
-        if (quote == null || quote.getTicker() == null) {
+        if (quote == null || quote.getSymbol() == null) {
             throw new IllegalArgumentException("Quote or ID cannot be null");
         }
+
+        // Ensure timestamp is never null before saving to DB
+        if (quote.getTimestamp() == null) {
+            quote.setTimestamp(new Timestamp(System.currentTimeMillis())); // Auto-set current timestamp
+        }
+
 
         String insertOrUpdateSql = "INSERT INTO quote (symbol, open, high, low, price, volume, latest_trading_day, previous_close, change, change_percent, timestamp) " +
                 "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) " +
@@ -32,7 +38,7 @@ public class QuoteDao implements CrudDao<Quote, String> {
                 "change = EXCLUDED.change, change_percent = EXCLUDED.change_percent, timestamp = EXCLUDED.timestamp";
 
         try (PreparedStatement stmt = connection.prepareStatement(insertOrUpdateSql)) {
-            stmt.setString(1, quote.getTicker());
+            stmt.setString(1, quote.getSymbol());
             stmt.setDouble(2, quote.getOpen());
             stmt.setDouble(3, quote.getHigh());
             stmt.setDouble(4, quote.getLow());

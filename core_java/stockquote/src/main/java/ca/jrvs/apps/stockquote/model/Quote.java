@@ -1,30 +1,54 @@
 package ca.jrvs.apps.stockquote.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.sql.Timestamp;
 import java.util.Date;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Quote {
 
-    private String ticker; // id
+    @JsonProperty("01. symbol")
+    private String symbol;
+
+    @JsonProperty("02. open")
     private double open;
+
+    @JsonProperty("03. high")
     private double high;
+
+    @JsonProperty("04. low")
     private double low;
+
+    @JsonProperty("05. price")
     private double price;
+
+    @JsonProperty("06. volume")
     private int volume;
+
+    @JsonProperty("07. latest trading day")
     private Date latestTradingDay;
+
+    @JsonProperty("08. previous close")
     private double previousClose;
+
+    @JsonProperty("09. change")
     private double change;
+
+    @JsonProperty("10. change percent")
     private String changePercent;
+
     private Timestamp timestamp; // time when the info was pulled
 
     // Default constructor
     public Quote() {
     }
 
-    // Constructor with all fields
-    public Quote(String ticker, double open, double high, double low, double price, int volume,
+    // Constructor with all fields (correction)
+    public Quote(String symbol, double open, double high, double low, double price, int volume,
                  Date latestTradingDay, double previousClose, double change, String changePercent, Timestamp timestamp) {
-        this.ticker = ticker;
+        this.symbol = symbol;
         this.open = open;
         this.high = high;
         this.low = low;
@@ -38,14 +62,22 @@ public class Quote {
     }
 
     // Getters and Setters
-
-
+    // Alias methods for backward compatibility with older code
     public String getTicker() {
-        return ticker;
+        return getSymbol();
     }
 
     public void setTicker(String ticker) {
-        this.ticker = ticker;
+        setSymbol(ticker);
+    }
+
+
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
     }
 
     public double getOpen() {
@@ -125,15 +157,18 @@ public class Quote {
     }
 
     public void setTimestamp(Timestamp timestamp) {
-        this.timestamp = timestamp;
+        if (timestamp == null) {
+            this.timestamp = new Timestamp(System.currentTimeMillis()); // Set current time
+        } else {
+            this.timestamp = timestamp;
+        }
     }
 
-    // toString method formatted as the API response
     @Override
     public String toString() {
         return "{\n" +
                 "  \"Global Quote\": {\n" +
-                "    \"01. symbol\": \"" + ticker + "\",\n" +
+                "    \"01. symbol\": \"" + symbol + "\",\n" +
                 "    \"02. open\": \"" + open + "\",\n" +
                 "    \"03. high\": \"" + high + "\",\n" +
                 "    \"04. low\": \"" + low + "\",\n" +
@@ -147,3 +182,4 @@ public class Quote {
                 "}";
     }
 }
+

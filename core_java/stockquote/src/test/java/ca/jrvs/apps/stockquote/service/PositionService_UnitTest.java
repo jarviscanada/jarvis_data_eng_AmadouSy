@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import java.lang.reflect.Field;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -21,14 +20,9 @@ class PositionService_UnitTest {
     private PositionDao mockDao;
 
     @BeforeEach
-    void setUp() throws Exception {
+    void setUp() {
         MockitoAnnotations.openMocks(this);
-        positionService = new PositionService();
-
-        // Inject mockDao into private field `dao` using reflection
-        Field daoField = PositionService.class.getDeclaredField("dao");
-        daoField.setAccessible(true);
-        daoField.set(positionService, mockDao);
+        positionService = new PositionService(mockDao); // Injecte le mockDao correctement
     }
 
     @Test
