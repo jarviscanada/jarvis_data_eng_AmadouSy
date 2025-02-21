@@ -1,7 +1,7 @@
 # Core Java Apps
 This project category consists of the two Java applications below
 
-1. [Java Grep App](./grep)
+# Java Grep App
 
 ## Introduction
 
@@ -108,9 +108,8 @@ Here are three simple improvements for the project:
 
 
 
-2. [Stock Quote App](./stockquote)
 
-   # Stock Quote Application  
+# Stock Quote Application  
 
 ## Introduction  
 The **Stock Quote Application** is a Java-based application designed to retrieve and manage real-time stock market data. It fetches stock information from the **Alpha Vantage API** and stores it in a **PostgreSQL database**.  
