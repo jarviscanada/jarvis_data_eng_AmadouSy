@@ -122,3 +122,22 @@ This application follows a **modular architecture**, using **JDBC, PostgreSQL, M
 
 This project aims to provide **real-time financial insights** while demonstrating best practices in **database interaction, API integration, and software design patterns**.  
 
+## Implementation  
+
+### ER Diagram  
+The **ER (Entity-Relationship) Diagram** represents how the data is structured in the database. It includes tables for storing stock quotes, user transactions, and portfolio details.  
+
+#### **Key Entities**:  
+1. **Quote Table** - Stores stock price information such as symbol, open price, high price, low price, and volume.  
+2. **Position Table** - Tracks the stocks owned by a user, including the number of shares and total investment.  
+3. **Transaction Table** - Records buy and sell transactions, including stock symbol, transaction type, price, and timestamp.  
+
+Below is the ER diagram of the system:  
+
+*(Insert ER diagram image here)*  
+
+The database is managed using **PostgreSQL**, and data is inserted or retrieved using **JDBC**.  
+
+
+
+
