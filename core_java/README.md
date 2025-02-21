@@ -142,34 +142,28 @@ The database is managed using **PostgreSQL**, and data is inserted or retrieved 
 
 ### DAO (Data Access Object) Pattern
 
-The **DAO pattern** is a way to organize code so that everything related to the database is kept separate from the rest of the application. Instead of writing database queries directly inside the business logic, we use **DAO classes** to handle this.
+The **DAO pattern** is like a **middleman** between our code and the database. Instead of writing database queries everywhere in the project, we put them in **DAO classes**. This way, if we ever change the database or its structure, we only need to update the DAO, not the entire project.
 
-In our **Stock Quote App**, we have:
-- `QuoteDao` → Handles stock price data in the database.
-- `PositionDao` → Manages stock positions (how many shares we own, etc.).
+In the **Stock Quote App**, we have:
+- `QuoteDao` → Manages stock quotes in the database (saving, updating, deleting).
+- `PositionDao` → Handles stock positions.
 
-#### Why use DAO?
-- Makes it **easier to change** the database without affecting other parts of the app.
-- Keeps code **clean and well-organized**.
-- Helps with **testing**, since we can test business logic separately from database operations.
+This makes our code **cleaner, easier to update, and more organized**.
 
 ### Repository Pattern
 
-The **Repository pattern** acts as a **middleman** between the DAO and the rest of the application. Instead of calling the database directly, we go through the repository, which **manages data fetching and business logic**.
+The **Repository pattern** is another layer that makes our app even more **organized**. Instead of calling DAOs directly, our **service classes** (like `QuoteService` and `PositionService`) handle everything. 
 
-In this project, we have:
-- `QuoteService` → Fetches stock data from an API and saves it to the database.
-- `PositionService` → Manages buying and selling stocks.
+For example:
+- `QuoteService` **gets stock data** from an API, **cleans it**, then **saves it** using `QuoteDao`.
+- `PositionService` manages stock **buying and selling** before updating the database.
 
-#### Why use Repository?
-- It **simplifies** data access by providing a single place to manage it.
-- It **separates business logic** from database operations.
-- Makes code **more flexible and maintainable**.
+By doing this:
+- The **business logic** is separate from database code.
+- It's **easier to change how we store data** without breaking everything.
+- The app is **more readable and maintainable**.
 
-### Conclusion
-
-By using **DAO** and **Repository**, we keep our application **organized, easier to manage, and more scalable**. If we ever switch to a different database or add new features, these patterns **help us make changes without breaking the whole app**.
-
+In short, **DAO manages the database, and Service (Repository) manages business logic**. Together, they make the app **easier to update and scale**.
 
 
 
