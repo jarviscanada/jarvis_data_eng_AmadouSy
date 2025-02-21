@@ -109,3 +109,17 @@ Here are three simple improvements for the project:
 
 
 2. [Stock Quote App](./stockquote)
+
+   # Stock Quote Application  
+
+## Introduction  
+The **Stock Quote Application** is a Java-based application designed to retrieve and manage real-time stock market data. It fetches stock information from the **Alpha Vantage API** and stores it in a **PostgreSQL database**.  
+
+This application follows a **modular architecture**, using **JDBC, PostgreSQL, Maven, OkHttp, and Docker** to ensure scalability and maintainability. The main functionalities include:  
+- Fetching live stock quotes  
+- Storing stock data in a relational database  
+- Managing user stock positions (buying and selling stocks)  
+- Running inside a Docker container for easy deployment  
+
+This project aims to provide **real-time financial insights** while demonstrating best practices in **database interaction, API integration, and software design patterns**.  
+
