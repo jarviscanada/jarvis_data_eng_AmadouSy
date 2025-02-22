@@ -165,6 +165,42 @@ By doing this:
 
 In short, **DAO manages the database, and Service (Repository) manages business logic**. Together, they make the app **easier to update and scale**.
 
+## Testing
+
+### How to Test the App Against the Database
+
+To ensure the **Stock Quote App** works correctly with the database, follow these steps:
+
+#### 1. Database Setup
+Before running tests, set up a **PostgreSQL database**:
+
+- **Local Database:** Install PostgreSQL and create a database.
+- **Docker Container:** Run a PostgreSQL container for quick testing.
+
+##### Example (Docker):
+```sh
+docker run --name stockquote-db -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=admin -e POSTGRES_DB=stockquote -p 5432:5432 -d postgres
+
+## Test
+
+### How we tested the Stock Quote App
+
+To ensure the **Stock Quote App** correctly retrieves and stores stock data, we performed several tests:
+
+#### 1. API Data Retrieval Test
+Before integrating the API into the app, we tested the stock quote API separately using `curl`:
+```sh
+curl -X GET "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=AAPL&apikey=YOUR_API_KEY"
+If the JSON response contained the expected stock price, we confirmed that the API was working correctly.
+
+We executed the application to verify if it fetched data and stored it in the database:
+
+```sh
+java -cp "target/classes:target/dependency/*" ca.jrvs.apps.stockquote.Main
+
+
+
+
 
 
 
