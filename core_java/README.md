@@ -167,36 +167,57 @@ In short, **DAO manages the database, and Service (Repository) manages business 
 
 ## Testing
 
-### How to Test the App Against the Database
+We ensured the **Stock Quote App** was working correctly through **unit tests, integration tests, and manual database verification**.
 
-To ensure the **Stock Quote App** works correctly with the database, follow these steps:
+#### 1. Running Unit Tests with JUnit & Mockito
 
-#### 1. Database Setup
-Before running tests, set up a **PostgreSQL database**:
+We used **JUnit** and **Mockito** to test individual components, ensuring they worked as expected.
 
-- **Local Database:** Install PostgreSQL and create a database.
-- **Docker Container:** Run a PostgreSQL container for quick testing.
-
-##### Example (Docker):
-```sh
-docker run --name stockquote-db -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=admin -e POSTGRES_DB=stockquote -p 5432:5432 -d postgres
-
-## Test
-
-### How we tested the Stock Quote App
-
-To ensure the **Stock Quote App** correctly retrieves and stores stock data, we performed several tests:
-
-#### 1. API Data Retrieval Test
-Before integrating the API into the app, we tested the stock quote API separately using `curl`:
-```sh
-curl -X GET "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=AAPL&apikey=YOUR_API_KEY"
-If the JSON response contained the expected stock price, we confirmed that the API was working correctly.
-
-We executed the application to verify if it fetched data and stored it in the database:
+To run unit tests:
 
 ```sh
+mvn test
+```
+
+#### What We Tested:
+- **QuoteService**: Ensured stock data was fetched and parsed correctly.
+- **QuoteDao**: Verified data insertion and retrieval from PostgreSQL.
+- **StockQuoteController**: Checked if user input was correctly processed.
+
+### 2. Running the Application with Maven
+
+To ensure the app runs properly, we used:
+
+```sh
+mvn clean package
 java -cp "target/classes:target/dependency/*" ca.jrvs.apps.stockquote.Main
+```
+### 3. Debugging & Log Analysis
+
+If errors appeared (e.g., `ClassNotFoundException`, JSON parsing errors, or database connection issues), we debugged and fixed them.  
+We checked logs to ensure that stock data was successfully retrieved.
+
+#### Checking Logs for Issues
+
+We used **SLF4J logging** to track:
+
+- ✅ Successful database connections.
+- ✅ Stock quote retrieval from the API.
+- ❌ JSON structure mismatches (fixed by adjusting the `Quote` class).
+- ❌ Database insertion conflicts (fixed with `ON CONFLICT DO UPDATE`).
+
+### 4. Database Verification in PostgreSQL
+
+After running the application, we manually checked if the stock data was correctly stored in **PostgreSQL**:
+
+```sql
+SELECT * FROM quote;
+```
+
+If the expected stock values appeared in the database, we confirmed that the app was storing the data properly.
+
+
+
 
 
 
