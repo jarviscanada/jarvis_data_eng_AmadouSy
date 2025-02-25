@@ -134,8 +134,8 @@ The **ER (Entity-Relationship) Diagram** represents how the data is structured i
 
 Below is the ER diagram of the system:  
 
-*(Insert ER diagram image here)*  
-
+![Stock Quote ER Diagram](StockQuote_ERD.drawio.png)
+ 
 The database is managed using **PostgreSQL**, and data is inserted or retrieved using **JDBC**.  
 
 ## Design Patterns
