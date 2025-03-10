@@ -5,8 +5,7 @@ github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_AmadouSy
 
 # Introduce yourself, your academic and professional background.
 # What excites you about the software industry and your passion. At least 80 words
-summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis a orci ac malesuada. Vivamus ligula elit, viverra eu ante porttitor, blandit convallis augue. Aliquam justo justo, mollis at lacus eu, rutrum finibus est. Vestibulum venenatis purus id accumsan pretium. In efficitur magna nec enim laoreet tincidunt. Ut libero metus, scelerisque nec eros vitae, sagittis pellentesque enim. Donec dictum felis volutpat, vehicula magna eu, imperdiet elit. Phasellus ut velit a massa efficitur faucibus. Sed volutpat, lacus sed sagittis luctus, elit.
-
+summary: I am a graduate from the University of Quebec in Montreal with a Bachelor of Computer Science and Software Engineering. Throughout my academic career and practical experiences, I have developed strong proficiency in Java, SQL, Linux/Bash scripting, and Agile methodologies. I enjoy working collaboratively, solving challenging problems, and adapting quickly to new technologies and environments. My passion lies in creating efficient, reliable software solutions, and I am enthusiastic about contributing to meaningful projects as part of Jarvis Consulting Group.
 # Group your skills by level.
 # Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
 skills:
@@ -42,16 +41,16 @@ skills:
 # List of Jarvis projects
 jarvis_projects:
   - name: "Cluster Monitor"
-    git_url: "https://github.com/jarviscanada/jarvis_data_eng_AmadouSy/blob/develop/linux_sql"
+    git_url: "https://github.com/jarviscanada/jarvis_data_eng_AmadouSy/tree/develop/linux_sql"
     # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
     # The project description must start with an action verb (https://bit.ly/3guO98u)
-    description: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
+    description: This project implement a Linux Cluster Monitor application using Bash and PostgreSQL to collect, store, and analyze real-time hardware resource data. Utilized Docker for easy deployment, enhancing portability and consistency across different environments. Developed scripts to automate data extraction, transformation, and loading (ETL), and created SQL queries for efficient data management and reporting.
   - name: "Core Java Apps"
     git_url: "https://github.com/jarviscanada/jarvis_data_eng_AmadouSy/blob/feature/core_java/core_java"
     description:
-      - "Twitter App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
-      - "JDBC App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+      - "JDBC App: Implemented a Java application leveraging JDBC to connect, interact, and perform CRUD operations with a PostgreSQL database. Designed data access objects (DAOs) for clean and efficient data handling, utilized Maven for build management, and Docker to simplify the application setup and deployment process. Conducted thorough testing to ensure reliability, stability, and accuracy of database transactions."
       - "Grep App: This project implements a simple Java Grep application that searches through files in a directory to find lines that match a given regular expression (regex). The design of the application is based on core Java concepts, including IO operations (reading and writing files), regular expressions, and file traversal. It uses a Docker container for easy deployment, ensuring portability across systems. The project also leverages lambda expressions and streams for efficient data processing. The application is developed using an IDE (e.g., IntelliJ IDEA), and packaged into a JAR file for distribution."
+      - "Stockquote App: Developed a Java-based Stock Quote application using JDBC and PostgreSQL to manage and analyze stock market data efficiently. Leveraged Maven for dependency management and Docker for application portability and streamlined deployment. Implemented comprehensive unit tests with JUnit to ensure code reliability and correctness. Demonstrated proficiency in object-oriented programming, database connectivity, and data processing"
   - name: "Springboot App"
     git_url: "/springboot"
     description: ""
@@ -71,30 +70,38 @@ jarvis_projects:
 # List of personal or academic projects
 # Feel free to add more projects
 highlighted_projects:
-    #project name
-  - name: "Web app for resturant"
-    #URL is optional
-    git_url: "https://github.com/jarviscanada/jarvis_profile_builder"
-    # The project description must start with an action verb (https://bit.ly/3guO98u)
-    description: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
-  - name: "Machine Learning"
-    git_url:
-    description: Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.
+  - name: "E-commerce Website Prototype"
+    git_url: 
+    description: "Developed a prototype of an e-commerce website to demonstrate modern web development techniques, integrating HTML, CSS, and JavaScript to provide a user-friendly shopping experience."
 
-#List of professional experience
+  - name: "Album Collection Search and Statistics Module"
+    git_url:
+    description: "Implemented a search and statistical analysis module to query and analyze data from a collection of music albums using SQL and Java."
+
+  - name: "Superhero Management Microservices"
+    git_url:
+    description: "Designed and implemented a superhero management system using microservices architecture in Java and Spring Boot, enhancing scalability and modularity."
+
+  - name: "Health Insurance Claims Reimbursement Application"
+    git_url:
+    description: "Developed a Java application to automate reimbursement calculations for healthcare insurance claims, improving accuracy and processing efficiency."
+
+  - name: "SmartMail Application"
+    git_url:
+    description: "Built an intelligent email management system called SmartMail using Haskell, featuring advanced functionalities such as message sorting, spam filtering, and contact management."
+
 #The job description allows hiring managers to understand your job and the technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
 #The description must be more than 25 words. If your experience is not software related, please focus on soft skills and achievements (e.g. team collaboration, problem-solving, improvements, communication).
 professional_experience:
-  #Write your Jarvis role as a professional experience rather than training.
-  - title: "Software Developer"
-    company: "Jarvis"
-    duration: "2020-present"
-    # The project description must start with an action verb (https://bit.ly/3guO98u)
-    description: "Donec mattis sed justo et sagittis. Vestibulum lacinia nulla ipsum. Curabitur imperdiet nibh vitae leo lacinia laoreet. Nullam accumsan, lectus ut maximus ultricies, augue justo egestas mi, vel bibendum felis."
-  - title: "Tutor"
-    company: "XYZ Company"
-    duration: "2019"
-    description: "Donec mattis sed justo et sagittis. Vestibulum lacinia nulla ipsum. Curabitur imperdiet nibh vitae leo lacinia laoreet. Nullam accumsan, lectus ut maximus ultricies, augue justo egestas mi, vel bibendum felis."
+  - title: "Software Developer Junior"
+    company: "Jarvis Consulting Group"
+    duration: "2024-present"
+    description: "Developed and maintained applications in Java, focusing on backend solutions and SQL query optimization. Collaborated with Agile teams, participated in code reviews, and contributed to improving software performance and scalability."
+
+  - title: "Backend Developer Intern"
+    company: "Ville de Montréal"
+    duration: "September 2022 - December 2022"
+    description: "Implemented new features and enhancements for internal applications using Java and REST APIs. Improved existing functionalities, enhanced application efficiency, and actively participated in training sessions focused on API development."
 
 #List of education
 education: 
@@ -102,29 +109,15 @@ education:
     duration: "2020-2024"
     degree: "Bachelor of Computer Science and Software Engineering"
     department: "Applied Science"
-    # optional
-    awards_achievements: 
-      - "Scholarship"
-      - "Dean's List (2015, 2016): Ut enim ad minim veniam"
-      - "GPA: 3.8/4.0"
-  - school_name: "XYZ university"
-    duration: "2016-2018"
-    degree: "Master of Engineering"
-    department: "Electrical and Computer Engineering"
-    awards_achievements: 
+    awards_achievements:
+      - "Developed multiple academic projects using Java, C/C++, Haskell, and Prolog"
+      - "Gained hands-on experience with SQL databases and microservices architecture"
+      - "Completed projects emphasizing problem-solving and collaborative teamwork"
 
 #Optional section
 others:
     #category
-  - title: "Certificates"
-    #list of items
-    bullets:
-      - "Udacity Machine Learning (2019)"
-  - title: "Awards"
-    bullets:
-      - "Winner"
   - title: "Activities/Hobbies"
     bullets:
-      - "Basketball player"
       - "Competitive gaming"
-      - "Volunteer, ABC Food bank: Ut enim ad minim veniam"
+      - "Soccer player"
