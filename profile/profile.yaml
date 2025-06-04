@@ -37,6 +37,8 @@ skills:
     - SAP
     - C++
     - RDBMS/SQL
+    - Pyspark
+    - Scala
 
 # List of Jarvis projects
 jarvis_projects:
@@ -44,13 +46,19 @@ jarvis_projects:
     git_url: "https://github.com/jarviscanada/jarvis_data_eng_AmadouSy/tree/develop/linux_sql"
     # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
     # The project description must start with an action verb (https://bit.ly/3guO98u)
-    description: This project implement a Linux Cluster Monitor application using Bash and PostgreSQL to collect, store, and analyze real-time hardware resource data. Utilized Docker for easy deployment, enhancing portability and consistency across different environments. Developed scripts to automate data extraction, transformation, and loading (ETL), and created SQL queries for efficient data management and reporting.
+    description: "This project implement a Linux Cluster Monitor application using Bash and PostgreSQL to collect, store, and analyze real-time hardware resource data. Utilized Docker for easy deployment, enhancing portability and consistency across different environments. Developed scripts to automate data extraction, transformation, and loading (ETL), and created SQL queries for efficient data management and reporting.
   - name: "Core Java Apps"
     git_url: "https://github.com/jarviscanada/jarvis_data_eng_AmadouSy/blob/feature/core_java/core_java"
     description:
       - "JDBC App: Implemented a Java application leveraging JDBC to connect, interact, and perform CRUD operations with a PostgreSQL database. Designed data access objects (DAOs) for clean and efficient data handling, utilized Maven for build management, and Docker to simplify the application setup and deployment process. Conducted thorough testing to ensure reliability, stability, and accuracy of database transactions."
       - "Grep App: This project implements a simple Java Grep application that searches through files in a directory to find lines that match a given regular expression (regex). The design of the application is based on core Java concepts, including IO operations (reading and writing files), regular expressions, and file traversal. It uses a Docker container for easy deployment, ensuring portability across systems. The project also leverages lambda expressions and streams for efficient data processing. The application is developed using an IDE (e.g., IntelliJ IDEA), and packaged into a JAR file for distribution."
       - "Stockquote App: Developed a Java-based Stock Quote application using JDBC and PostgreSQL to manage and analyze stock market data efficiently. Leveraged Maven for dependency management and Docker for application portability and streamlined deployment. Implemented comprehensive unit tests with JUnit to ensure code reliability and correctness. Demonstrated proficiency in object-oriented programming, database connectivity, and data processing"
+  - name: "Spark Retail Data Analysis"
+    git_url: "https://github.com/jarviscanada/jarvis_data_eng_AmadouSy/tree/develop/spark"
+    description: "Developed a retail data analysis pipeline using Apache Spark on Azure Databricks. Loaded and cleaned transactional data from `online_retail_ii.csv`, created derived columns (e.g., TotalPrice = Quantity * Price), and performed aggregations such as total sales by country, top products, and monthly trends. Utilized Spark DataFrames and SQL to extract insights, applied caching for performance, and visualized key metrics in a Databricks notebook. Demonstrated proficiency with PySpark, Databricks File System (DBFS), and cloud-based data processing."
+  - name : "Spark Retail Data Analysis (Scala)"
+  - git_url : "https://github.com/jarviscanada/jarvis_data_eng_AmadouSy/tree/develop/spark_scala"
+    description: "Re-implemented the Spark-based retail data analytics pipeline using Scala in Azure Databricks. Loaded and cleaned data from `online_retail_ii.csv`, created computed columns (e.g., TotalPrice), and performed key aggregations (top-selling items, monthly trends, best customers). Demonstrated advanced usage of Spark DataFrames and SQL with Scala, and leveraged caching and visualization features within Databricks to optimize performance and insights extraction. This project highlights strong skills in functional programming, data processing, and Scala-based Spark development."
   - name: "Springboot App"
     git_url: "/springboot"
     description: ""
@@ -59,9 +67,6 @@ jarvis_projects:
     description: ""
   - name: "Hadoop"
     git_url: "/hadoop"
-    description: ""
-  - name: "Spark"
-    git_url: "/spark"
     description: ""
   - name: "Cloud/DevOps"
     git_url: "/cloud_devops"
@@ -119,5 +124,6 @@ others:
     #category
   - title: "Activities/Hobbies"
     bullets:
-      - "Competitive gaming"
-      - "Soccer player"
+      - "Gaming"
+      - "Soccer"
+      - "Anime/Manga fan"
