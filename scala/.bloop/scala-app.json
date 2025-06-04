@@ -1,0 +1,104 @@
+{
+    "version": "1.4.0",
+    "project": {
+        "name": "scala-app",
+        "directory": "/Users/amadousy/jarvis_data_eng_AmadouSy/scala",
+        "workspaceDir": "/Users/amadousy/jarvis_data_eng_AmadouSy/scala",
+        "sources": [
+            "/Users/amadousy/jarvis_data_eng_AmadouSy/scala/src/main/scala"
+        ],
+        "dependencies": [
+            
+        ],
+        "classpath": [
+            "/Users/amadousy/jarvis_data_eng_AmadouSy/scala/target/classes"
+        ],
+        "out": "/Users/amadousy/jarvis_data_eng_AmadouSy/scala/target",
+        "classesDir": "/Users/amadousy/jarvis_data_eng_AmadouSy/scala/target/classes",
+        "resources": [
+            "/Users/amadousy/jarvis_data_eng_AmadouSy/scala/src/main/resources"
+        ],
+        "java": {
+            "options": [
+                "-g",
+                "-encoding",
+                "UTF-8"
+            ]
+        },
+        "test": {
+            "frameworks": [
+                {
+                    "names": [
+                        "com.novocode.junit.JUnitFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.scalatest.tools.Framework",
+                        "org.scalatest.tools.ScalaTestFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.scalacheck.ScalaCheckFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "org.specs.runner.SpecsFramework",
+                        "org.specs2.runner.Specs2Framework",
+                        "org.specs2.runner.SpecsFramework"
+                    ]
+                },
+                {
+                    "names": [
+                        "utest.runner.Framework"
+                    ]
+                },
+                {
+                    "names": [
+                        "munit.Framework"
+                    ]
+                }
+            ],
+            "options": {
+                "excludes": [
+                    
+                ],
+                "arguments": [
+                    {
+                        "args": [
+                            "-v",
+                            "-a"
+                        ],
+                        "framework": {
+                            "names": [
+                                "com.novocode.junit.JUnitFramework"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "platform": {
+            "name": "jvm",
+            "config": {
+                "home": "/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home",
+                "options": [
+                    
+                ]
+            },
+            "mainClass": [
+                
+            ]
+        },
+        "resolution": {
+            "modules": [
+                
+            ]
+        },
+        "tags": [
+            "library"
+        ]
+    }
+}

@@ -1,0 +1,139 @@
+{
+  "education": [
+    {
+      "awards_achievements": [
+        "Developed multiple academic projects using Java, C/C++, Haskell, and Prolog",
+        "Gained hands-on experience with SQL databases and microservices architecture",
+        "Completed projects emphasizing problem-solving and collaborative teamwork"
+      ],
+      "degree": "Bachelor of Computer Science and Software Engineering",
+      "department": "Applied Science",
+      "duration": "2020-2024",
+      "school_name": "University of Quebec in Montreal"
+    }
+  ],
+  "github_repo_root_url": "https://github.com/jarviscanada/jarvis_data_eng_AmadouSy",
+  "highlighted_projects": [
+    {
+      "description": "Developed a prototype of an e-commerce website to demonstrate modern web development techniques, integrating HTML, CSS, and JavaScript to provide a user-friendly shopping experience.",
+      "git_url": null,
+      "name": "E-commerce Website Prototype"
+    },
+    {
+      "description": "Implemented a search and statistical analysis module to query and analyze data from a collection of music albums using SQL and Java.",
+      "git_url": null,
+      "name": "Album Collection Search and Statistics Module"
+    },
+    {
+      "description": "Designed and implemented a superhero management system using microservices architecture in Java and Spring Boot, enhancing scalability and modularity.",
+      "git_url": null,
+      "name": "Superhero Management Microservices"
+    },
+    {
+      "description": "Developed a Java application to automate reimbursement calculations for healthcare insurance claims, improving accuracy and processing efficiency.",
+      "git_url": null,
+      "name": "Health Insurance Claims Reimbursement Application"
+    },
+    {
+      "description": "Built an intelligent email management system called SmartMail using Haskell, featuring advanced functionalities such as message sorting, spam filtering, and contact management.",
+      "git_url": null,
+      "name": "SmartMail Application"
+    }
+  ],
+  "jarvis_projects": [
+    {
+      "description": "This project implement a Linux Cluster Monitor application using Bash and PostgreSQL to collect, store, and analyze real-time hardware resource data. Utilized Docker for easy deployment, enhancing portability and consistency across different environments. Developed scripts to automate data extraction, transformation, and loading (ETL), and created SQL queries for efficient data management and reporting.",
+      "git_url": "https://github.com/jarviscanada/jarvis_data_eng_AmadouSy/tree/develop/linux_sql",
+      "name": "Cluster Monitor"
+    },
+    {
+      "description": [
+        "JDBC App: Implemented a Java application leveraging JDBC to connect, interact, and perform CRUD operations with a PostgreSQL database. Designed data access objects (DAOs) for clean and efficient data handling, utilized Maven for build management, and Docker to simplify the application setup and deployment process. Conducted thorough testing to ensure reliability, stability, and accuracy of database transactions.",
+        "Grep App: This project implements a simple Java Grep application that searches through files in a directory to find lines that match a given regular expression (regex). The design of the application is based on core Java concepts, including IO operations (reading and writing files), regular expressions, and file traversal. It uses a Docker container for easy deployment, ensuring portability across systems. The project also leverages lambda expressions and streams for efficient data processing. The application is developed using an IDE (e.g., IntelliJ IDEA), and packaged into a JAR file for distribution.",
+        "Stockquote App: Developed a Java-based Stock Quote application using JDBC and PostgreSQL to manage and analyze stock market data efficiently. Leveraged Maven for dependency management and Docker for application portability and streamlined deployment. Implemented comprehensive unit tests with JUnit to ensure code reliability and correctness. Demonstrated proficiency in object-oriented programming, database connectivity, and data processing"
+      ],
+      "git_url": "https://github.com/jarviscanada/jarvis_data_eng_AmadouSy/blob/feature/core_java/core_java",
+      "name": "Core Java Apps"
+    },
+    {
+      "description": "",
+      "git_url": "/springboot",
+      "name": "Springboot App"
+    },
+    {
+      "description": "",
+      "git_url": "/python_data_anlytics",
+      "name": "Python Data Analytics"
+    },
+    {
+      "description": "",
+      "git_url": "/hadoop",
+      "name": "Hadoop"
+    },
+    {
+      "description": "",
+      "git_url": "/spark",
+      "name": "Spark"
+    },
+    {
+      "description": "",
+      "git_url": "/cloud_devops",
+      "name": "Cloud/DevOps"
+    }
+  ],
+  "name": "Amadou Sy",
+  "others": [
+    {
+      "bullets": [
+        "Competitive gaming",
+        "Soccer player"
+      ],
+      "title": "Activities/Hobbies"
+    }
+  ],
+  "professional_experience": [
+    {
+      "company": "Jarvis Consulting Group",
+      "description": "Developed and maintained applications in Java, focusing on backend solutions and SQL query optimization. Collaborated with Agile teams, participated in code reviews, and contributed to improving software performance and scalability.",
+      "duration": "2024-present",
+      "title": "Software Developer Junior"
+    },
+    {
+      "company": "Ville de Montréal",
+      "description": "Implemented new features and enhancements for internal applications using Java and REST APIs. Improved existing functionalities, enhanced application efficiency, and actively participated in training sessions focused on API development.",
+      "duration": "September 2022 - December 2022",
+      "title": "Backend Developer Intern"
+    }
+  ],
+  "skills": {
+    "competent": [
+      "Java",
+      "C",
+      "Linux",
+      "R",
+      "HTML/CSS"
+    ],
+    "familiar": [
+      "Linux/Bash",
+      "Javascript",
+      "SAP",
+      "C++",
+      "RDBMS/SQL"
+    ],
+    "proficient": [
+      "Java",
+      "Linux/Bash",
+      "RDBMS/SQL",
+      "Agile/Scrum",
+      "Git",
+      "C/C++",
+      "HTML/CSS",
+      "Haskell",
+      "Prolog",
+      "R",
+      "SAP",
+      "Javascript"
+    ]
+  },
+  "summary": "I am a graduate from the University of Quebec in Montreal with a Bachelor of Computer Science and Software Engineering. Throughout my academic career and practical experiences, I have developed strong proficiency in Java, SQL, Linux/Bash scripting, and Agile methodologies. I enjoy working collaboratively, solving challenging problems, and adapting quickly to new technologies and environments. My passion lies in creating efficient, reliable software solutions, and I am enthusiastic about contributing to meaningful projects as part of Jarvis Consulting Group."
+}
