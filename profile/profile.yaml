@@ -1,0 +1,129 @@
+# Preferred name (Characters only)
+name: "Amadou Sy"
+# Your GitHub repo root URL
+github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_AmadouSy
+
+# Introduce yourself, your academic and professional background.
+# What excites you about the software industry and your passion. At least 80 words
+summary: I am a graduate from the University of Quebec in Montreal with a Bachelor of Computer Science and Software Engineering. Throughout my academic career and practical experiences, I have developed strong proficiency in Java, SQL, Linux/Bash scripting, and Agile methodologies. I enjoy working collaboratively, solving challenging problems, and adapting quickly to new technologies and environments. My passion lies in creating efficient, reliable software solutions, and I am enthusiastic about contributing to meaningful projects as part of Jarvis Consulting Group.
+# Group your skills by level.
+# Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
+skills:
+  # At least 5 skills
+  proficient:
+    - Java
+    - Linux/Bash
+    - RDBMS/SQL
+    - Agile/Scrum
+    - Git
+    - C/C++
+    - HTML/CSS
+    - Haskell
+    - Prolog
+    - R
+    - SAP
+    - Javascript
+  # At least 5 skills
+  competent:
+    - Java
+    - C
+    - Linux
+    - R
+    - HTML/CSS
+  # At least 5 skills
+  familiar:
+    - Linux/Bash
+    - Javascript
+    - SAP
+    - C++
+    - RDBMS/SQL
+    - Pyspark
+    - Scala
+
+# List of Jarvis projects
+jarvis_projects:
+  - name: "Cluster Monitor"
+    git_url: "https://github.com/jarviscanada/jarvis_data_eng_AmadouSy/tree/develop/linux_sql"
+    # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: "This project implement a Linux Cluster Monitor application using Bash and PostgreSQL to collect, store, and analyze real-time hardware resource data. Utilized Docker for easy deployment, enhancing portability and consistency across different environments. Developed scripts to automate data extraction, transformation, and loading (ETL), and created SQL queries for efficient data management and reporting.
+  - name: "Core Java Apps"
+    git_url: "https://github.com/jarviscanada/jarvis_data_eng_AmadouSy/blob/feature/core_java/core_java"
+    description:
+      - "JDBC App: Implemented a Java application leveraging JDBC to connect, interact, and perform CRUD operations with a PostgreSQL database. Designed data access objects (DAOs) for clean and efficient data handling, utilized Maven for build management, and Docker to simplify the application setup and deployment process. Conducted thorough testing to ensure reliability, stability, and accuracy of database transactions."
+      - "Grep App: This project implements a simple Java Grep application that searches through files in a directory to find lines that match a given regular expression (regex). The design of the application is based on core Java concepts, including IO operations (reading and writing files), regular expressions, and file traversal. It uses a Docker container for easy deployment, ensuring portability across systems. The project also leverages lambda expressions and streams for efficient data processing. The application is developed using an IDE (e.g., IntelliJ IDEA), and packaged into a JAR file for distribution."
+      - "Stockquote App: Developed a Java-based Stock Quote application using JDBC and PostgreSQL to manage and analyze stock market data efficiently. Leveraged Maven for dependency management and Docker for application portability and streamlined deployment. Implemented comprehensive unit tests with JUnit to ensure code reliability and correctness. Demonstrated proficiency in object-oriented programming, database connectivity, and data processing"
+  - name: "Spark Retail Data Analysis"
+    git_url: "https://github.com/jarviscanada/jarvis_data_eng_AmadouSy/tree/develop/spark"
+    description: "Developed a retail data analysis pipeline using Apache Spark on Azure Databricks. Loaded and cleaned transactional data from `online_retail_ii.csv`, created derived columns (e.g., TotalPrice = Quantity * Price), and performed aggregations such as total sales by country, top products, and monthly trends. Utilized Spark DataFrames and SQL to extract insights, applied caching for performance, and visualized key metrics in a Databricks notebook. Demonstrated proficiency with PySpark, Databricks File System (DBFS), and cloud-based data processing."
+  - name : "Spark Retail Data Analysis (Scala)"
+  - git_url : "https://github.com/jarviscanada/jarvis_data_eng_AmadouSy/tree/develop/spark_scala"
+    description: "Re-implemented the Spark-based retail data analytics pipeline using Scala in Azure Databricks. Loaded and cleaned data from `online_retail_ii.csv`, created computed columns (e.g., TotalPrice), and performed key aggregations (top-selling items, monthly trends, best customers). Demonstrated advanced usage of Spark DataFrames and SQL with Scala, and leveraged caching and visualization features within Databricks to optimize performance and insights extraction. This project highlights strong skills in functional programming, data processing, and Scala-based Spark development."
+  - name: "Springboot App"
+    git_url: "/springboot"
+    description: ""
+  - name: "Python Data Analytics"
+    git_url: "/python_data_anlytics"
+    description: ""
+  - name: "Hadoop"
+    git_url: "/hadoop"
+    description: ""
+  - name: "Cloud/DevOps"
+    git_url: "/cloud_devops"
+    description: ""
+
+# List of personal or academic projects
+# Feel free to add more projects
+highlighted_projects:
+  - name: "E-commerce Website Prototype"
+    git_url: 
+    description: "Developed a prototype of an e-commerce website to demonstrate modern web development techniques, integrating HTML, CSS, and JavaScript to provide a user-friendly shopping experience."
+
+  - name: "Album Collection Search and Statistics Module"
+    git_url:
+    description: "Implemented a search and statistical analysis module to query and analyze data from a collection of music albums using SQL and Java."
+
+  - name: "Superhero Management Microservices"
+    git_url:
+    description: "Designed and implemented a superhero management system using microservices architecture in Java and Spring Boot, enhancing scalability and modularity."
+
+  - name: "Health Insurance Claims Reimbursement Application"
+    git_url:
+    description: "Developed a Java application to automate reimbursement calculations for healthcare insurance claims, improving accuracy and processing efficiency."
+
+  - name: "SmartMail Application"
+    git_url:
+    description: "Built an intelligent email management system called SmartMail using Haskell, featuring advanced functionalities such as message sorting, spam filtering, and contact management."
+
+#The job description allows hiring managers to understand your job and the technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+#The description must be more than 25 words. If your experience is not software related, please focus on soft skills and achievements (e.g. team collaboration, problem-solving, improvements, communication).
+professional_experience:
+  - title: "Software Developer Junior"
+    company: "Jarvis Consulting Group"
+    duration: "2024-present"
+    description: "Developed and maintained applications in Java, focusing on backend solutions and SQL query optimization. Collaborated with Agile teams, participated in code reviews, and contributed to improving software performance and scalability."
+
+  - title: "Backend Developer Intern"
+    company: "Ville de Montréal"
+    duration: "September 2022 - December 2022"
+    description: "Implemented new features and enhancements for internal applications using Java and REST APIs. Improved existing functionalities, enhanced application efficiency, and actively participated in training sessions focused on API development."
+
+#List of education
+education: 
+  - school_name: "University of Quebec in Montreal"
+    duration: "2020-2024"
+    degree: "Bachelor of Computer Science and Software Engineering"
+    department: "Applied Science"
+    awards_achievements:
+      - "Developed multiple academic projects using Java, C/C++, Haskell, and Prolog"
+      - "Gained hands-on experience with SQL databases and microservices architecture"
+      - "Completed projects emphasizing problem-solving and collaborative teamwork"
+
+#Optional section
+others:
+    #category
+  - title: "Activities/Hobbies"
+    bullets:
+      - "Gaming"
+      - "Soccer"
+      - "Anime/Manga fan"
