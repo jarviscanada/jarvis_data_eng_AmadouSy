@@ -31,11 +31,12 @@ The dataset used is `online_retail_ii.csv`, which contains e-commerce transactio
 
 ## How to Run
 
-1. Open the Scala Jupyter notebook with Almond kernel  
-2. Make sure Spark is properly initialized  
-3. Place the CSV file in the accessible path (e.g., `online_retail_ii.csv`)  
-4. Run each cell in order to process and analyze the data  
-5. Optionally, switch to a Python notebook for plotting with Pandas/Matplotlib  
+1. Open the Databricks notebook (e.g., `notebooks/retail_data_analysis_scala`)  
+2. Make sure your Databricks cluster is running  
+3. Upload the CSV file (`online_retail_ii.csv`) into DBFS under `/FileStore/tables/`  
+4. Use Spark Scala code to load and process the file  
+5. Optionally, create a second notebook in Python to handle visualizations using Pandas and Matplotlib  
+
 
 ## Authors
 
