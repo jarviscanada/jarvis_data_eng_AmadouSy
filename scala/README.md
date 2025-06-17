@@ -1,8 +1,7 @@
-<<<<<<< HEAD
 # Spark/Scala Project
 This project is under development. Since this project follows the GitFlow, the final work will be merged to the master branch after Team Code Team.
 
-=======
+
 # Scala Retail Data Analytics Project
 
 ## Project Description
@@ -47,4 +46,4 @@ The dataset used is `online_retail_ii.csv`, which contains e-commerce transactio
 
 - Amadou Sy  
 - Project done as part of the Jarvis training program
->>>>>>> feature/scala
+
