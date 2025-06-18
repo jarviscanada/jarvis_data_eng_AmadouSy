@@ -1,0 +1,29 @@
+# Ignore compiled Java files
+*.class
+
+# Ignore the generated files from the build process
+target/
+
+# Ignore IDE specific files
+.idea/
+*.iml
+*.log
+
+# Ignore .DS_Store for macOS
+.DS_Store
+
+# Ignore operating system generated files
+Thumbs.db
+
+# Ignore VSCode config
+.vscode/
+
+# Ignore Metals (Scala IDE stuff)
+.metals/
+
+# Autres règles existantes
+*.class
+*.log
+
+
+
