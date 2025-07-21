@@ -1,0 +1,9 @@
+{
+"cobol.layout": "fixed",
+"cobol.enable_source_sequence_number_area": true,
+"cobol.sourceformat": "fixed-form",
+"files.watcherExclude": {
+    "**/target": true
+}
+
+}
