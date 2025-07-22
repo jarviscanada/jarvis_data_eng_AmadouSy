@@ -41,6 +41,10 @@
 
        PROCEDURE DIVISION.
        BEGIN.
+
+           MOVE "N" TO WS-EOF
+           MOVE "N" TO WS-FOUND
+           
            DISPLAY "---------------------------------------------"
            DISPLAY "       DELETE STUDENT DETAILS                "
            DISPLAY "---------------------------------------------"

@@ -25,6 +25,8 @@
 
        PROCEDURE DIVISION.
        BEGIN.
+           MOVE "N" TO WS-EOF
+           MOVE "N" TO WS-FOUND
 
            DISPLAY "+-------------------------------------------+"
            DISPLAY "|   Q U E R Y   S T U D E N T   B Y   I D   |"

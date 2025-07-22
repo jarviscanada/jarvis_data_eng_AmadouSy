@@ -29,7 +29,10 @@
 
        PROCEDURE DIVISION.
        BEGIN.
-
+           
+           MOVE "N" TO WS-EOF
+           MOVE 0 TO WS-STUDENT-COUNT
+           
            DISPLAY "+-------------------------------------------------"&
            "------------------+"
            DISPLAY "|   Q U E R Y   S T U D E N T   B Y   I N C L U S "&

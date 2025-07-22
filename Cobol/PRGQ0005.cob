@@ -48,7 +48,7 @@
            DISPLAY "-------------------"              *> Footer
 
            CLOSE STUDENT-FILE                        *> Close file
-           EXIT PROGRAM.                             *> End program
+           STOP RUN.                             *> End program
 
        PARSE-LINE.
            UNSTRING STUDENT-LINE DELIMITED BY ","    *> Split CSV line into parts

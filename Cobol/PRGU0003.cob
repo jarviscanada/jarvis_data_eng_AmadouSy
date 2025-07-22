@@ -48,6 +48,9 @@
        PROCEDURE DIVISION.
        BEGIN.
 
+           MOVE "N" TO WS-EOF
+           MOVE "N" TO WS-FOUND
+
            DISPLAY "+---------------------------------+"
            DISPLAY "|   U P D A T E   S T U D E N T   |"
            DISPLAY "+---------------------------------+"   *> Display program title
