@@ -39,6 +39,7 @@ skills:
     - RDBMS/SQL
     - Pyspark
     - Scala
+    - Cobol
 
 # List of Jarvis projects
 jarvis_projects:
@@ -59,6 +60,9 @@ jarvis_projects:
   - name : "Spark Retail Data Analysis (Scala)"
   - git_url : "https://github.com/jarviscanada/jarvis_data_eng_AmadouSy/tree/develop/spark_scala"
     description: "Re-implemented the Spark-based retail data analytics pipeline using Scala in Azure Databricks. Loaded and cleaned data from `online_retail_ii.csv`, created computed columns (e.g., TotalPrice), and performed key aggregations (top-selling items, monthly trends, best customers). Demonstrated advanced usage of Spark DataFrames and SQL with Scala, and leveraged caching and visualization features within Databricks to optimize performance and insights extraction. This project highlights strong skills in functional programming, data processing, and Scala-based Spark development."
+  - name: "Mainframe Systems Development - COBOL"
+    git_url: "https://github.com/jarviscanada/jarvis_data_eng_AmadouSy/tree/develop/cobol"
+    description: "Designed and implemented a student information management system using COBOL on a simulated VSAM flat file. Developed various programs to insert, update, delete, search, and display student records, and implemented file conversion and reporting features. Created custom shell scripts to automate the build and clean process, improving workflow efficiency. Demonstrated knowledge of COBOL file handling, control structures, and procedural programming logic."
   - name: "Springboot App"
     git_url: "/springboot"
     description: ""
