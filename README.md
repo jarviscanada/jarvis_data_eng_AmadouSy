@@ -4,11 +4,11 @@ I am a graduate from the University of Quebec in Montreal with a Bachelor of Com
 
 ## Skills
 
-**Proficient:** Java, Linux/Bash, RDBMS/SQL, Agile/Scrum, Git, C/C++, HTML/CSS, Haskell, Prolog, R, SAP, Javascript
+**Proficient:** Java, Linux/Bash, RDBMS/SQL, Agile/Scrum, Git, HTML/CSS
 
-**Competent:** Java, C, Linux, R, HTML/CSS
+**Competent:** Java, C, Linux, R, HTML/CSS,
 
-**Familiar:** Linux/Bash, Javascript, SAP, C++, RDBMS/SQL
+**Familiar:** Linux/Bash, Javascript, SAP, C++, RDBMS/SQL, Haskell, Prolog, Pyspark, Scala, Cobol
 
 ## Jarvis Projects
 
@@ -22,6 +22,12 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_AmadouSy](
   - JDBC App: Implemented a Java application leveraging JDBC to connect, interact, and perform CRUD operations with a PostgreSQL database. Designed data access objects (DAOs) for clean and efficient data handling, utilized Maven for build management, and Docker to simplify the application setup and deployment process. Conducted thorough testing to ensure reliability, stability, and accuracy of database transactions.
   - Grep App: This project implements a simple Java Grep application that searches through files in a directory to find lines that match a given regular expression (regex). The design of the application is based on core Java concepts, including IO operations (reading and writing files), regular expressions, and file traversal. It uses a Docker container for easy deployment, ensuring portability across systems. The project also leverages lambda expressions and streams for efficient data processing. The application is developed using an IDE (e.g., IntelliJ IDEA), and packaged into a JAR file for distribution.
   - Stockquote App: Developed a Java-based Stock Quote application using JDBC and PostgreSQL to manage and analyze stock market data efficiently. Leveraged Maven for dependency management and Docker for application portability and streamlined deployment. Implemented comprehensive unit tests with JUnit to ensure code reliability and correctness. Demonstrated proficiency in object-oriented programming, database connectivity, and data processing
+
+**Spark** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AmadouSy/tree/main/spark)]: Developed a retail data analysis pipeline using Apache Spark on Azure Databricks. Loaded and cleaned transactional data from online_retail_ii.csv, created derived columns (e.g., TotalPrice = Quantity * Price), and performed aggregations such as total sales by country, top products, and monthly trends. Utilized Spark DataFrames and SQL to extract insights, applied caching for performance, and visualized key metrics in a Databricks notebook. Demonstrated proficiency with PySpark, Databricks File System (DBFS), and cloud-based data processing.
+
+**Spark Retail Data Analysis (Scala)** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AmadouSy/tree/main/scala)]: Re-implemented a Spark-based retail data analysis pipeline using Scala in Azure Databricks. Loaded and cleaned transaction data, created computed columns such as TotalPrice, and performed key aggregations (e.g., monthly sales trends, top products). Utilized Spark SQL and DataFrame APIs to extract insights and applied caching to optimize performance. Demonstrated strong knowledge of Scala, Spark, and cloud-based data processing.
+
+**Mainframe Systems Development - COBOL** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AmadouSy/tree/main/Cobol)]: Designed and implemented COBOL programs simulating a mainframe environment to manage student records. Built features for adding, updating, deleting, searching, and reporting student data stored in flat files. Included automated build and clean scripts to streamline compilation and testing. Demonstrated skills in procedural programming, file I/O, and batch processing logic.
 
 **Springboot App** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_AmadouSy/tree/master/springboot)]: Not Started
 
