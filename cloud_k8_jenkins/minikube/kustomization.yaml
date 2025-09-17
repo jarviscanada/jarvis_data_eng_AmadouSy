@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+secretGenerator:
+  - name: trading-app
+    literals:
+      - password=mypassword
+      - user=postgres
+      - IEX_PUB_TOKEN=pk_your_public_token_here
+
+resources:
+  - psql-deployment.yaml
+  - trading-deployment.yaml

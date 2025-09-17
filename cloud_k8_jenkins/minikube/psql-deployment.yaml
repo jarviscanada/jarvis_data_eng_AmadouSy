@@ -1,0 +1,79 @@
+# Service: expose the Postgres pod to other pods (headless for stable DNS)
+apiVersion: v1
+kind: Service
+metadata:
+  name: trading-psql
+  labels:
+    app: trading
+spec:
+  ports:
+    - port: 5432
+      name: psql
+  selector:
+    app: trading
+    tier: db
+  clusterIP: None
+
+---
+# PersistentVolumeClaim: keep database data across pod restarts
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: psql-pv-claim
+  labels:
+    app: trading
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+
+---
+# Deployment: run the Postgres container
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trading-psql
+  labels:
+    app: trading
+spec:
+  selector:
+    matchLabels:
+      app: trading
+      tier: db
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: trading
+        tier: db
+    spec:
+      containers:
+        - name: psql
+          image: jrvs/trading-psql-demo:latest
+          env:
+            # Secrets must exist: `trading-app` with keys: password, user
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: trading-app
+                  key: password
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: trading-app
+                  key: user
+            - name: POSTGRES_DB
+              value: jrvstrading
+          ports:
+            - containerPort: 5432
+              name: psql
+          volumeMounts:
+            - name: psql-persistent-storage
+              mountPath: /var/lib/psql
+      volumes:
+        - name: psql-persistent-storage
+          persistentVolumeClaim:
+            claimName: psql-pv-claim

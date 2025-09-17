@@ -1,0 +1,67 @@
+# Service: expose the trading app via a load balancer
+apiVersion: v1
+kind: Service
+metadata:
+  name: trading
+  labels:
+    app: trading
+spec:
+  type: LoadBalancer
+  selector:
+    app: trading
+    tier: app-server
+  ports:
+    - port: 80
+      targetPort: 5000
+      name: http
+
+---
+# Deployment: trading application (talks to Postgres service trading-psql)
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trading
+  labels:
+    app: trading
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: trading
+      tier: app-server
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: trading
+        tier: app-server
+    spec:
+      containers:
+        - name: trading
+          image: jrvs/trading-app-demo:latest
+          ports:
+            - containerPort: 5000
+              name: http
+          env:
+            - name: PSQL_HOST
+              value: trading-psql
+            - name: PSQL_PORT
+              value: "5432"
+            - name: PSQL_DB
+              value: jrvstrading
+            - name: PSQL_USER
+              valueFrom:
+                secretKeyRef:
+                  name: trading-app
+                  key: user
+            - name: PSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: trading-app
+                  key: password
+            - name: IEX_PUB_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: trading-app
+                  key: IEX_PUB_TOKEN
